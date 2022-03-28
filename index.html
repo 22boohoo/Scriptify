@@ -7,7 +7,438 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Josefin+Sans:ital,wght@1,300&family=Playfair+Display&family=Rajdhani:wght@300&family=Raleway&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      html,body
+{
+  background-color: rgb(237, 237, 237)
+}
+#title
+{
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left;
+  font-size: 40px;
+  
+}
+#bigtitle
+{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 100;
+  text-align: center;
+}
+#c-bigtitle
+{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 100;
+  border-width: 3px;
+  margin-top: 5%;
+  text-align: center;
+  border-style: dashed;
+  border-color: rgba(255, 125, 125, 0);
+  z-index: 10000000;
+  transition: border-color 0.3s ease-in-out;
+  border-radius: 20px;
+ 
+}
+#c-bigtitle:hover
+{
+  border-color: rgba(255, 125, 125, 1);
+ 
+}
+#subtitle
+{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
+}
+#bluedot
+{
+  font-weight: 900;
+  color: #00bfff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  transition: color 0.7s ease-in-out;
+  
+  cursor:none;
+}
+#bluedot:hover
+{
+  color: #ffd294;
+}
+#startdiv
+{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#startbtn
+{
+  margin-top: 0px;
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  border-color: rgba(1,1,1,0);
+  background-color: #00bfff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: #f1f0ff;
+   box-shadow: 0px 0px 20px 5px #00bfff;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: background-color 0.7s ease-in-out,box-shadow 0.7s ease-in-out
+ 
+}
+#interactive1
+{
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left;
+  font-size: 45px;
+  font-weight: 100;
+  text-align: center;
+  color: rgb(0,0,0);
+  transition: color 0.7s ease-in-out
+}
+interactive1:hover
+{
+  color: #8880ff;
+}
+#startbtn:hover
+{
+   background-color: #ffd294;
+  box-shadow: 0px 0px 25px 10px #ffd294;
+}
+#topdiv
+{
+  background-color: #fff;
+            position: sticky;
+            top: 0px;
+   padding: 0px 0px;
+  top: 0px; /* Header Height */
+    bottom: 20px; /* Footer Height */
+    width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  z-index: 1000;
+     
+}
+#bottomdiv
+{
+  margin-top: 34%;
+  background-color: #000000;
+  height: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+vertical-align: middle;
+line-height: 50px; 
+  font-family: 'Josefin Sans', sans-serif;
+  
+}
+
+#ptext
+{
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+#pdiv
+{
+  
+  position: sticky;
+  z-index: 11;
+  text-align: center;
+  
+  font-family: 'Raleway', sans-serif;
+  background-color: #3b464f;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  font-weight: 100;
+  width: 40vh;
+  height: 40vh;
+  border-radius: 5px 50px 5px; 
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+#pdivheader
+{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  padding: 10px;
+  font-weight: 100;
+  z-index: 10;
+  height: 100px;
+  width: 20vh;
+  background-color: transparent;
+  color: #ffffff;
+  
+}
+#zdiv
+{
+  
+  position: sticky;
+  z-index: 11;
+  text-align: center;
+  
+  font-family: 'Raleway', sans-serif;
+  background-color: #4e3b47;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  font-weight: 100;
+  width: 40vh;
+  height: 20vh;
+  border-radius: 5px 50px 5px; 
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+#y-color
+{
+  font-weight: 100;
+  border-radius: 15px;
+   background-color: #cd9db4;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+#zdivheader
+{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  padding: 10px;
+  font-weight: 100;
+  z-index: 10;
+  height: 100px;
+  width: 20vh;
+  background-color: transparent;
+  color: #ffffff;
+  
+}
+#adiv
+{
+  
+  position: sticky;
+  z-index: 10;
+  text-align: center;
+  
+  font-family: 'Raleway', sans-serif;
+  background-color: #435646;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  font-weight: 100;
+  width: 40vh;
+  height: 30vh;
+  border-radius: 5px 50px 5px; 
+  margin: 0;
+  position: absolute;
+  top: 75%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+#adivheader
+{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  padding: 10px;
+  font-weight: 100;
+  z-index: 10;
+  height: 100px;
+  width: 20vh;
+  background-color: transparent;
+  color: #ffffff;
+  
+}
+#d-maindiv
+{
+  width: 80%;
+  height: 100vh;
+  margin-left: 20%;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+#d-text
+{
+  font-weight: 100;
+  width: fill-box;
+  z-index: 91;
+  background-color: #6f8190;
+  border-color: transparent;
+  color: #fcfcfc;
+  position: relative;
+        overflow: auto !important;
+  border-radius: 15px;
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+#d-color
+{
+  font-weight: 100;
+  border-radius: 15px;
+   background-color: #9db7cd;
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#d-fonts
+{
+
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#d-tsize
+{
+  color: #fcfcfc;
+  background-color: #9db7cd;
+  border-radius: 15px;
+  border-color: tranparent;
+
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#t-text
+{
+  background-color: #546d65;
+  color: white;
+  padding: 16px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  z-index: 111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#y-btn
+{
+  background-color: #6d5454;
+  color: white;
+  padding: 16px;
+
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  z-index: 111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#t-img
+{
+  background-color: #546d65;
+  color: white;
+  padding: 16px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  z-index: 111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: #54636d;
+  color: white;
+  padding: 16px;
+
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  z-index: 111;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#newtext
+{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 100;
+  border-width: 3px;
+  margin-top: 5%;
+  text-align: center;
+  border-style: dashed;
+  border-color: rgba(255, 125, 125, 0);
+  z-index: 10000000;
+  transition: border-color 0.3s ease-in-out;
+  border-radius: 20px;
+ 
+}
+#newtext:hover
+{
+  border-color: rgba(255, 125, 125, 1);
+ 
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #70838f;
+  
+  z-index: 111;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 111;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 111;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  z-index: 111;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
+
+    </style>
     <link rel="shortcut icon" href="https://scriptify.locksh.repl.co/favicon.png">
     <script src="jquery-3.6.0.min.js"></script>
   </head>
