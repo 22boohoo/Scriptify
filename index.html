@@ -20,6 +20,197 @@
     <h3 id="subtitle">Plan, Style, Generate.</h3>
     <div id="startdiv"><button type="button" onclick="start()" id="startbtn" >Get       Started</button></div>
     <div id="bottomdiv">Laksh Patel ©2022</div>
-    <script src="script.js"></script>
+    <script>
+      
+// Variables
+let selected = null; //Selected Object.
+let textid = 0; //Number of text objects, used for select by id.
+let imgid = 0; //Number of image objects, used for select by id and image sources.
+let version = "1.19"
+let color = document.getElementById('y-color');
+
+/* 
+
+
+
+
+                       Functions.
+
+
+
+
+
+*/
+function changecolor()
+{
+    document.getElementById("d-maindiv").style.backgroundColor = color.value;
+}
+    
+function syntax()
+{
+   alert(selected.ToString() + textid.ToString() + imgid.ToString() + "SYNTAX:" + version.ToString());
+  
+}
+//Checks if strings are only spaces/blank.  
+function onlySpaces(str) {
+  return str.trim().length === 0;
+}
+//Opens up the project.html file.
+function start()
+{
+  self.location="project.html";
+  
+  
+}
+//Changes Font Size.
+function FontSize() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+//Closes dropdown. --Do not edit--
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+
+function CinzelFont()
+{
+  if(selected)
+  {
+    document.getElementById(selected).style.fontFamily = 'Cinzel', serif;
+  }
+    
+}
+function JosefinFont()
+{
+  if(selected)
+  {
+    document.getElementById(selected).style.fontFamily = 'Josefin Sans', "sans-serif ";
+  }
+    
+}
+
+function RalewayFont()
+{
+   if(selected)
+   {
+     document.getElementById(selected).style.fontFamily = 'Raleway', "sans-serif";
+   }
+}
+function selecttitle()
+{ 
+  selected = "c-bigtitle";
+  let bar = document.getElementById("a");
+  bar.innerHTML = "Properties Title"
+  let title = document.getElementById("c-bigtitle");
+  let text = document.getElementById("d-text");
+  let color = document.getElementById("d-color");
+  let size = document.getElementById("d-tsize");
+  if (onlySpaces(text.value))
+  {
+    title.innerHTML = title.innerHTML
+  }else{
+    title.innerHTML = text.value;
+  }
+  if (onlySpaces(size.value))
+  {
+    title.style.fontSize = title.style.fontSize
+  }else{
+    if(size.value >= 250)
+    {
+      size.value = 250;
+      title.style.fontSize = size.value + "px";
+      
+    }else if (size.value <= 30){
+      title.style.height = "100px;"
+      title.style.fontSize = size.value + "px";
+    }else{
+      title.style.fontSize = size.value + "px";
+    }
+    
+  }
+  
+  title.style.color = color.value;
+}
+function createimage()
+{
+  
+  let newimage = document.createElement('img');
+  newimage.id = 'c-img';
+  getElementById("c-img").src = 'image.png';
+  
+}
+function createtext()
+{
+  if(textid==0)
+  {
+    console.log("first element.t")
+  }else{
+    alert("This will confirm all changes to the last element. ")
+  }
+  
+  textid += 1;
+  let newtext = document.createElement("p");
+  newtext.innerHTML = "Sample Text";
+  newtext.id = "c-text" + textid;
+  let doc = document.getElementById("d-maindiv");
+  
+  document.getElementById("d-maindiv").appendChild(newtext);
+  selected = newtext.id;
+  document.getElementById(selected).onclick = function() {selecttext()};
+}
+
+
+
+function selecttext()
+{
+
+
+  let bar = document.getElementById("a");
+  bar.innerHTML = "Properties Text" + textid;
+  let newtext = document.getElementById(selected);
+  let text = document.getElementById("d-text");
+  let color = document.getElementById("d-color");
+  let size = document.getElementById("d-tsize");
+  if (onlySpaces(text.value))
+  {
+    newtext.innerHTML = newtext.innerHTML;
+  }else{
+    newtext.innerHTML = text.value;
+  }
+  if (onlySpaces(size.value))
+  {
+    newtext.style.fontSize = newtext.style.fontSize;
+  }else{
+    if(size.value >= 250)
+    {
+      size.value = 250;
+      newtext.style.fontSize = size.value + "px";
+      
+    }else if (size.value <= 30){
+      newtext.style.height = "100px;"
+      newtext.style.fontSize = size.value + "px";
+    }else{
+      newtext.style.fontSize = size.value + "px";
+    }
+    
+  }
+  
+  newtext.style.color = color.value; 
+}
+
+    </script>
   </body>
 </html>
